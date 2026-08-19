@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+.vercel/
+.pnpm-store/
+.env*
+!.env.example
+*.log
+*.tsbuildinfo
+*.pem
+*.key
+*.p12
+*.pfx
+.DS_Store
