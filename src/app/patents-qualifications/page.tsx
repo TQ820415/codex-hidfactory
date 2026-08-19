@@ -1,0 +1,9 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import { PageHero, CtaBand } from "@/components/PageParts";
+
+export const metadata: Metadata = { title: "Patents & Qualifications", description: "Hidriving company qualification and patent documentation." };
+
+export default function PatentsPage() {
+  return <><PageHero eyebrow="Company trust" title="Patents and company qualifications" text="Documented technical assets are presented as company-level evidence, not as product or quality-system certifications." /><section className="section"><div className="container split"><div className="visual"><Image src="/images/qualification.jpg" alt="High and New Technology Enterprise certificate GR202332010524" fill sizes="(max-width: 760px) 100vw, 50vw" /></div><div><p className="eyebrow">Company qualification</p><h2>High and New Technology Enterprise</h2><p>Certificate holder: Hanqu (Wuxi) Automotive Technology Co., Ltd.</p><table className="spec-table"><tbody><tr><th>Certificate number</th><td>GR202332010524</td></tr><tr><th>Issue date</th><td>13 December 2023</td></tr><tr><th>Certificate term</th><td>Three years as stated on the certificate</td></tr></tbody></table></div></div></section><section className="section section-soft"><div className="container"><div className="section-title"><p className="eyebrow">Patent portfolio</p><h2>20+ valid patents</h2><p>The active source directory contains 22 de-duplicated patent certificates and one software copyright record. The software copyright is not counted as a patent.</p></div><div className="notice"><strong>Certification status</strong><p>Hidriving does not currently claim third-party quality-management-system certification or specific-market product certification. Patent and company qualification records do not prove ISO, IATF, CE, UL, CARB, EPA or product performance compliance.</p></div></div></section><CtaBand /></>;
+}

@@ -1,0 +1,9 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import { CtaBand, PageHero, SectionTitle } from "@/components/PageParts";
+
+export const metadata: Metadata = { title: "About Hidriving", description: "Learn about Hidriving engineering, production and quality-control capabilities in Wuxi, China." };
+
+export default function AboutPage() {
+  return <><PageHero eyebrow="About Hidriving" title="Supercharger engineering from Wuxi, China" text="Hanqu (Wuxi) Automotive Technology Co., Ltd. was established in August 2020 and develops automotive supercharger systems and related automotive products." /><section className="section"><div className="container split"><div><SectionTitle eyebrow="Company profile" title="Make driving more fun through focused engineering" /><p>Hidriving supports independent product development, structural design, prototype manufacturing, vehicle testing and batch production. The team works with automotive brands, tuning brands, distributors, manufacturers and project partners.</p><p>Relevant technical personnel bring approximately 20 years of experience. This figure describes personnel experience and is not the age of the company.</p></div><div className="visual"><Image src="/images/factory.png" alt="Hidriving production facility" fill sizes="(max-width: 760px) 100vw, 50vw" /></div></div></section><section className="section section-soft"><div className="container"><div className="grid-3"><div className="info-card"><p className="eyebrow">Facility</p><h2>2000+ m²</h2><p>Confirmed production facility area.</p></div><div className="info-card"><p className="eyebrow">Team</p><h2>40+</h2><p>Confirmed team size.</p></div><div className="info-card"><p className="eyebrow">Technical assets</p><h2>20+</h2><p>Valid patents confirmed in the current source files.</p></div></div></div></section><CtaBand /></>;
+}
