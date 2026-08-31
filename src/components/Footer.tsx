@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CookiePreferencesLink } from "@/components/CookiePreferencesLink";
 import { site } from "@/data/site";
 
 export function Footer() {
@@ -23,6 +24,7 @@ export function Footer() {
           <Link href="/resources">Resources</Link>
           <Link href="/faq">FAQ</Link>
           <Link href="/warranty">Limited Warranty</Link>
+          <Link href="/privacy-policy">Privacy Policy</Link>
         </div>
         <div>
           <h3>Contact</h3>
@@ -34,7 +36,7 @@ export function Footer() {
       </div>
       <div className="container footer-bottom">
         <span>© {new Date().getFullYear()} Hidriving. All rights reserved.</span>
-        <span>{site.legalName}</span>
+        <span className="footer-legal-links"><span>{site.legalName}</span><CookiePreferencesLink /></span>
       </div>
     </footer>
   );
