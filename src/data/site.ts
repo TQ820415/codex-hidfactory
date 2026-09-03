@@ -3,7 +3,7 @@ export const site = {
   legalName: "Hanqu (Wuxi) Automotive Technology Co., Ltd.",
   description:
     "Vehicle-specific supercharger kits and OEM/ODM engineering support from Wuxi, China.",
-  email: "ciararice775239@gmail.com",
+  email: "hidriving2020@gmail.com",
   phone: "+8613915290925",
   whatsapp: "https://wa.me/8613915290925",
   location: "Wuxi, Jiangsu, China",
