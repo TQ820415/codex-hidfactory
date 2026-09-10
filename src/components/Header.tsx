@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import type { MouseEvent } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { products } from "@/data/products";
 import { primaryNavigation } from "@/data/site";
 
@@ -11,18 +11,53 @@ function closeMobileMenu(event: MouseEvent<HTMLAnchorElement>) {
 }
 
 export function Header() {
+  const [productsOpen, setProductsOpen] = useState(false);
+  const productsMenuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function closeOnOutsideClick(event: PointerEvent) {
+      if (!productsMenuRef.current?.contains(event.target as Node)) {
+        setProductsOpen(false);
+      }
+    }
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        if (productsMenuRef.current?.contains(document.activeElement)) {
+          productsMenuRef.current.querySelector<HTMLButtonElement>("button")?.focus();
+        }
+        setProductsOpen(false);
+      }
+    }
+    document.addEventListener("pointerdown", closeOnOutsideClick);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeOnOutsideClick);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, []);
+
   return (
-    <header className="site-header">
+    <header className="site-header" onClickCapture={(event) => {
+      if ((event.target as Element).closest("a")) setProductsOpen(false);
+    }}>
       <div className="container header-inner">
         <Link className="brand" href="/" aria-label="Hidriving home">
-          <Image src="/images/hidriving-logo.png" alt="Hidriving" width={1600} height={1600} sizes="158px" priority />
+          <Image src="/images/hidriving-logo-transparent.png" alt="Hidriving" width={1254} height={1254} sizes="(max-width: 760px) 168px, 190px" priority />
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {primaryNavigation.map((item) =>
             item.label === "Products" ? (
-              <details className="nav-dropdown" key={item.href}>
-                <summary>{item.label}</summary>
-                <div className="mega-menu">
+              <div className="nav-dropdown" key={item.href} ref={productsMenuRef}
+                onMouseEnter={() => setProductsOpen(true)}
+                onMouseLeave={() => setProductsOpen(false)}
+                onBlur={(event) => {
+                  if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setProductsOpen(false);
+                }}>
+                <Link href={item.href}>{item.label}</Link>
+                <button type="button" className="products-menu-toggle" aria-label="Toggle product platforms"
+                  aria-expanded={productsOpen} aria-controls="product-platforms-menu"
+                  onClick={() => setProductsOpen((open) => !open)}>▾</button>
+                <div className="mega-menu" id="product-platforms-menu" hidden={!productsOpen}>
                   <div>
                     <p className="eyebrow">Product platforms</p>
                     <h3>Vehicle-specific systems</h3>
@@ -38,7 +73,7 @@ export function Header() {
                     ))}
                   </div>
                 </div>
-              </details>
+              </div>
             ) : (
               <Link href={item.href} key={item.href}>{item.label}</Link>
             ),

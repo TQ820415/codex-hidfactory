@@ -13,11 +13,13 @@ export const metadata: Metadata = {
 export default function EngineeringRdPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Engineering & R&D"
-        title="From vehicle analysis to production-ready supercharger systems"
-        text="From vehicle analysis and 3D engineering to prototype development, testing and mass production, we provide complete supercharger kit development solutions."
-      />
+      <div className="engineering-page-hero">
+        <PageHero
+          eyebrow="Engineering & R&D"
+          title="From vehicle analysis to production-ready supercharger systems"
+          text="From vehicle analysis and 3D engineering to prototype development, testing and mass production, we provide complete supercharger kit development solutions."
+        />
+      </div>
 
       <nav className="engineering-detail-nav" aria-label="Engineering and R&D categories">
         <div className="container engineering-detail-links">

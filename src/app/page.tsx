@@ -8,7 +8,7 @@ export default function HomePage() {
     <>
       <section className="hero">
         <div className="container hero-content">
-          <p className="eyebrow">Hidriving supercharger systems</p>
+          <p className="eyebrow hero-eyebrow">Hidriving supercharger systems</p>
           <h1>Vehicle-specific engineering. From concept to batch production.</h1>
           <p className="lead">Water-intercooled supercharger kits, vehicle integration support and OEM/ODM development for selected engine platforms.</p>
           <div className="button-row"><Link className="button" href="/products">Explore Products</Link><Link className="button button-secondary" href="/oem-odm">Start an OEM/ODM Project</Link></div>
