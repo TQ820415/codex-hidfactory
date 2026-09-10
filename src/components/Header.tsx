@@ -42,7 +42,7 @@ export function Header() {
     }}>
       <div className="container header-inner">
         <Link className="brand" href="/" aria-label="Hidriving home">
-          <Image src="/images/hidriving-logo-transparent.png" alt="Hidriving" width={1254} height={1254} sizes="(max-width: 760px) 168px, 190px" priority />
+          <Image src="/images/hidriving-logo-mixed-case.png" alt="Hidriving" width={1254} height={1254} sizes="(max-width: 760px) 168px, 190px" priority />
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {primaryNavigation.map((item) =>
