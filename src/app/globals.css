@@ -15,7 +15,7 @@ p { margin:0 0 1rem; }
 .header-inner { min-height:78px; display:flex; align-items:center; gap:26px; }
 .brand { display:flex; width:190px; height:60px; margin-right:auto; overflow:hidden; }
 .brand img { width:100%; height:100%; object-fit:cover; object-position:center; }
-.desktop-nav { display:flex; align-items:center; gap:22px; font-size:.85rem; font-weight:700; }
+.desktop-nav { display:flex; align-items:center; gap:22px; font-size:1rem; font-weight:700; }
 .desktop-nav>a,.nav-dropdown>a { padding:28px 0; cursor:pointer; white-space:nowrap; }
 .nav-dropdown>a:hover,.desktop-nav>a:hover { color:var(--red); }
 .nav-dropdown { position:relative; display:flex; align-items:center; }
@@ -35,7 +35,7 @@ p { margin:0 0 1rem; }
 .button-secondary { background:transparent; border-color:rgba(255,255,255,.55); }
 .button-row { display:flex; flex-wrap:wrap; gap:12px; }
 .text-link { color:var(--red); font-weight:800; }
-.eyebrow { margin-bottom:12px; color:var(--red); font-size:.76rem; font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
+.eyebrow { margin-bottom:12px; color:var(--red); font-size:clamp(1.125rem,1.7vw,1.375rem); line-height:1.35; font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
 .lead { color:var(--muted); font-size:clamp(1.05rem,2vw,1.28rem); max-width:760px; }
 .hero { min-height:700px; display:grid; align-items:end; color:#fff; background:linear-gradient(90deg,rgba(9,11,15,.42) 0%,rgba(9,11,15,.76) 42%,rgba(9,11,15,.68) 100%),url('/images/hero.jpg') 26% center/cover no-repeat; }
 .hero-content { padding-block:100px 76px; max-width:1180px; }
@@ -97,6 +97,7 @@ p { margin:0 0 1rem; }
 .engineering-detail-links a span { color:var(--red); font-size:.875rem; letter-spacing:.1em; flex-shrink:0; }
 .engineering-detail-links a:hover,.engineering-detail-links a:focus-visible { color:var(--red); border-color:var(--red); transform:translateY(-1px); }
 .engineering-detail-intro { padding-bottom:64px; }
+.engineering-detail-intro .eyebrow { font-size:clamp(1.125rem,1.7vw,1.375rem); line-height:1.35; }
 .engineering-category { scroll-margin-top:156px; }
 .engineering-category-heading { display:grid; grid-template-columns:68px minmax(0,1fr); gap:24px; align-items:start; margin-bottom:38px; }
 .engineering-category-index { padding-top:7px; color:var(--red); font-size:.82rem; font-weight:900; letter-spacing:.16em; }
