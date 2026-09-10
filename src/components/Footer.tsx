@@ -27,10 +27,10 @@ export function Footer() {
           <Link href="/privacy-policy">Privacy Policy</Link>
         </div>
         <div>
-          <h3>产品及技术咨询</h3>
+          <h3>Product &amp; Technical Inquiries</h3>
           <a href="mailto:zt820415love@163.com">zt820415love@163.com</a>
           <a href="tel:+8618351995109">+8618351995109</a>
-          <h3>业务咨询</h3>
+          <h3>Business Inquiries</h3>
           <a href="mailto:hidriving2020@gmail.com">hidriving2020@gmail.com</a>
           <a href="tel:+8613915290925">+8613915290925</a>
           <a href={site.whatsapp} target="_blank" rel="noreferrer">WhatsApp</a>
